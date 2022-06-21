@@ -6,7 +6,13 @@ const Movie = require('../model/Movie')
 router.get('/:gt/:lt', async (req, res) => {
     // /api/movies/year?2009
     // /api/movies/:year
-    const movies = await Movie.find({ year: { $nin:[1997, 2020] } }) // $eq = equal teng
+    const movies = await Movie.find({
+        title: /^ti/i
+    }).find({
+        title: /ar$/
+    }).find({
+        title: /.*sl*/i
+    })  // RegEx
         .limit(3)
     // .sort({ imdb: -1 })
 
