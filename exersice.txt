@@ -1,0 +1,4 @@
+// REST ful api
+// 1 - Online kiyim do'kon // price $10  $50 // type; brand; price; color
+// 2 - Mevalar // date //  10 gacha // type; date; price; weigth
+// 3 - Master lar // imdb top 10 // name; profi; imdb; hourly

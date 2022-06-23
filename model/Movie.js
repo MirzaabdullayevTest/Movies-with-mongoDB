@@ -3,7 +3,9 @@ const { Schema, model } = require('mongoose')
 const movieSchema = new Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        minlength: 4,
+        // unique: true
     },
     type: {
         type: String,
@@ -23,7 +25,15 @@ const movieSchema = new Schema({
     },
     imdb: {
         type: Number,
+        required: function () {
+            return this.isPublished
+        },
         default: 0
+    },
+    isPublished: {
+        type: Boolean,
+        required: true,
+        default: false
     }
 })
 
